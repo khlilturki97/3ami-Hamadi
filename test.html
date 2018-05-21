@@ -1,0 +1,107 @@
+<!Doctype html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> Ajout </title>
+</head>
+<body>
+<!-- nous avons ajouté enctype="multipart/form-data" pour permettre de gérer les
+uploads 
+	<form method="post" action="traitement.php">
+		<table width="200" align="center" >
+			<tr>
+				<td>Nom :</td>
+				<td> <input name="nom" type="text" required /></td>
+			</tr>
+			<!--	<td>Age: </td>
+				<td> <input name="age" type="number" /></td>
+			</tr>
+				<td>
+				Email :
+				</td>
+				<td> <input name="mail" type="email" required /></td>
+			</tr>
+			<tr>
+				<td>Date de naissance</td>
+				<td> <input name="dn" type="date" required></textarea></td>
+			</tr>
+			<tr>
+				<td>Adresse</td>
+				<td> <textarea name="adr"></textarea></td>
+				</tr>
+			<tr>
+				<td>Photo</td>
+				<td> <input name="fichier" type="file" /></td>
+			</tr>
+			<tr>
+				<td>Login: </td>
+				<td> <input name="login" type="text" /></td>
+			</tr>
+			<tr>
+				<td>Password: </td>
+				<td> <input name="pwd" type="password"/></td>
+			</tr>
+				<tr>
+				<td colspan="2" align="center"><input name="ok" type="submit" /> </td>
+			</tr>
+		</table>
+	</form>
+
+<!--	<iframe src="D:\9raya\GL 2\algebre.pdf" width="1200" height="385" seamless="seamless" scrolling="no" frameBorder="0"        allowTransparency="true" allowFullScreen="true"></iframe>-->
+
+	<div id="flipbook" style="margin:auto; border: black 1px solid; ">
+
+		<div style="background-image: url('photo/CoursJemaiSCJP_Full2018-page-001.jpg');"></div>
+		<div style="background-image: url('photo/CoursJemaiSCJP_Full2018-page-002.jpg');"></div>
+		<div style="background-image: url('photo/CoursJemaiSCJP_Full2018-page-003.jpg');"></div>
+		<div style="background-image: url('photo/CoursJemaiSCJP_Full2018-page-004.jpg');"></div>
+		<div style="background-image: url('photo/CoursJemaiSCJP_Full2018-page-005.jpg');"></div>
+		<div style="background-image: url('photo/CoursJemaiSCJP_Full2018-page-006.jpg');"></div>
+		<div style="background-image: url('photo/CoursJemaiSCJP_Full2018-page-007.jpg');"></div>
+		<div style="background-image: url('photo/CoursJemaiSCJP_Full2018-page-008.jpg');"></div>
+		<div style="background-image: url('photo/CoursJemaiSCJP_Full2018-page-009.jpg');"></div>
+		<div style="background-image: url('photo/CoursJemaiSCJP_Full2018-page-010.jpg');"></div>
+		<div style="background-image: url('photo/CoursJemaiSCJP_Full2018-page-011.jpg');"></div>
+		<div style="background-image: url('photo/CoursJemaiSCJP_Full2018-page-012.jpg');"></div>
+		<div style="background-image: url('photo/CoursJemaiSCJP_Full2018-page-013.jpg');"></div>
+		<div style="background-image: url('photo/CoursJemaiSCJP_Full2018-page-014.jpg');"></div>
+		<div style="background-image: url('photo/CoursJemaiSCJP_Full2018-page-015.jpg');"></div>
+		<div style="background-image: url('photo/CoursJemaiSCJP_Full2018-page-016.jpg');"></div>
+		<div style="background-image: url('photo/CoursJemaiSCJP_Full2018-page-017.jpg');"></div>
+		<div style="background-image: url('photo/CoursJemaiSCJP_Full2018-page-018.jpg');"></div>
+		<div style="background-image: url('photo/CoursJemaiSCJP_Full2018-page-019.jpg');"></div>
+		<div style="background-image: url('photo/CoursJemaiSCJP_Full2018-page-020.jpg');"></div>
+		<div style="background-image: url('photo/CoursJemaiSCJP_Full2018-page-021.jpg');"></div>
+		<div style="background-image: url('photo/CoursJemaiSCJP_Full2018-page-022.jpg');"></div>
+		<div style="background-image: url('photo/CoursJemaiSCJP_Full2018-page-023.jpg');"></div>
+	</div>
+	<input id="hello" style="width: 10px">
+<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>-->
+<script type="text/javascript" src="jquery-3.3.1.min.js" ></script>
+<script type="text/javascript"  src="C:\Users\KHALIL\Desktop\turnjs4\lib/turn.js"></script>
+<script type="text/javascript">
+	var flipbook=document.getElementById('flipbook');
+	//$(window).ready(function() {
+		$('#flipbook').turn({
+		width: 1200,
+		height: 900,
+		// autoCenter: true,
+		display: 'double',
+		acceleration : true,
+		elevation:50,
+		//page:18
+
+	})
+		
+
+	//})
+	hello.addEventListener('change',function() {
+
+	var b=document.getElementById("hello");
+		alert($('#flipbook').turn('pages'));
+
+		$('#flipbook').turn('page', b.value);
+
+	});
+
+
+</script>
