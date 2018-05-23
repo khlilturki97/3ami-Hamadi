@@ -29,8 +29,8 @@
 				<a href="#" id="fatha">اﻟﻔﺎﺗﺤﺔ </a>
 				<a href="#" id="bakara">البقرة</a>
 				<a href="#" id="omran">آل عمران</a>
-				<a href="#about">About</a>
-				<a href="#support">Support</a>
+				<a href="#" id="nisa">النساء</a>
+				<a href="#" id="maida">المائدة</a>
 				<a href="#blog">Blog</a>
 				<a href="#tools">Tools</a>  
 				<a href="#base">Base</a>
@@ -151,7 +151,7 @@ function loadApp() {
 		setTimeout(loadApp, 10);
 		return;
 	}
-	
+
 	// Create the flipbook
 
 	flipbook.turn({
@@ -186,7 +186,8 @@ function loadApp() {
 
 			// The number of pages
 
-			pages: 60,
+
+			pages: 100,
 
 			direction:"rtl",
 
@@ -555,6 +556,18 @@ var omran=document.getElementById("omran");
 omran.addEventListener('click',function()
 {
 	$('.magazine').turn('page', 45);
+})
+
+var nisa=document.getElementById("nisa");
+nisa.addEventListener('click',function()
+{
+	$('.magazine').turn('page', 69);
+})
+
+var maida=document.getElementById("maida");
+maida.addEventListener('click',function()
+{
+	$('.magazine').turn('page', 95);
 })
 
 
