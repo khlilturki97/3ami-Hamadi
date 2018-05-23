@@ -319,7 +319,7 @@ function loadApp() {
 	if ($.isTouch)
 		$('.magazine-viewport').bind('zoom.doubleTap', zoomTo);
 	else
-		$('.magazine-viewport').bind('zoom.tap', zoomTo);
+		$('.magazine-viewport').bind('zoom.doubleTap', zoomTo);
 
 
 	// Using arrow keys to turn the page
