@@ -4,6 +4,7 @@
 <!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+
 <head>
 <title>Quran</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
@@ -12,14 +13,71 @@
 <script type="text/javascript" src="turnjs4/extras/jquery.min.1.7.js"></script>
 <script type="text/javascript" src="turnjs4/extras/modernizr.2.5.3.min.js"></script>
 <script type="text/javascript" src="turnjs4/lib/hash.js"></script>
+<link rel="stylesheet" type="text/css" href="menu.css">
+<!--  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>-->
 <style>
 
 </style>
 
 
 </head>
-<body>
-			<div class="scrollmenu" style="width : 90%;margin:auto; ">
+<body style="overflow: auto">
+	  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler collapsed" id="buttonMenu" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="navbarNavDropdown">
+    	<script type="text/javascript">
+    		var buttonMenu=document.getElementById('buttonMenu');
+    		var navbarNavDropdown=document.getElementById('navbarNavDropdown');
+    		buttonMenu.addEventListener('click',function(){
+    			if (buttonMenu.className=="navbar-toggler collapsed")
+				{
+					buttonMenu.className="navbar-toggler";
+					navbarNavDropdown.className+=" show";
+				}
+				else
+				{
+					buttonMenu.className="navbar-toggler collapsed";
+					navbarNavDropdown.className="collapse navbar-collapse";
+				}	
+    		})
+    	</script>
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Qui sommes-nous?</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Nos livres
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="livre.html">Livre 1</a>
+          <a class="dropdown-item" href="#">Livre 2</a>
+          <a class="dropdown-item" href="#">Livre 3</a>
+        </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+<div style="margin:auto;">
+	<!--<img src="pages/1.jpg" style="margin:auto;">-->
+  			<div class="scrollmenu" style="width : 90%;margin:auto; ">
 
 				<a href="#" id="fatha">اﻟﻔﺎﺗﺤﺔ </a>
 				<a href="#" id="bakara">البقرة</a>
@@ -51,14 +109,17 @@
 				<a href="#partners">Partners</a>
 				<a href="#people">People</a>
 				<a href="#work">Work</a>
-			</div>
-		<div id="canvas" style="width: 100%; float: right;">
+			</div></div>
 
-			<div class="zoom-icon zoom-icon-in"></div>
 
-			<div class="magazine-viewport">
+			<div align="center">
+		<div id="canvas" style="width: 100%; ">
+
+			<div class="zoom-icon zoom-icon-in" ></div>
+
+			<div class="magazine-viewport" style="position: relative; overflow: auto; width: 900px; height: 1200px; margin:auto">
 				<div class="container">
-					<div class="magazine">
+					<div class="magazine" id="mag">
 						<!-- Next button -->
 						<div ignore="1" class="previous-button"></div>
 						<!-- Previous button -->
@@ -126,6 +187,7 @@
 				</div>	
 			</div>-->
 		</div>
+	</div>
 
 
 
@@ -133,7 +195,6 @@
 
 
 <script type="text/javascript">
-
 function loadApp() {
 
  	$('#canvas').fadeIn(1000);
@@ -147,17 +208,36 @@ function loadApp() {
 		return;
 	}
 
+	if (window)
+	{
+		larg = (window.innerWidth);
+		haut = (window.innerHeight);
+	}
+
+	 alert("Cette fenêtre fait " + larg + " de large et "+haut+" de haut");
+
+		if ( larg>haut) 
+	{
+			dis='double';
+			hei=600;
+		}
+		else {
+				dis='single';
+				hei=1200;} 
+
 	// Create the flipbook
+	wi=larg-50;
+	//hei=haut;
 
 	flipbook.turn({
 			
 			// Magazine width
 
-			width: 922,
+			width: wi,
 
 			// Magazine height
 
-			height: 600,
+			height: hei,
 
 			// Duration in millisecond
 
@@ -185,6 +265,7 @@ function loadApp() {
 			pages: 100,
 
 			direction:"rtl",
+			display:dis,
 
 			// Events
 
@@ -201,8 +282,8 @@ function loadApp() {
 
 					// Show and hide navigation buttons
 
-					disableControls(page);
-					
+					disableControls(page);	
+				
 
 					$('.thumbnails .page-'+currentPage).
 						parent().
@@ -240,6 +321,9 @@ function loadApp() {
 
 	});
 
+
+
+
 	// Zoom.js
 
 	$('.magazine-viewport').zoom({
@@ -270,7 +354,7 @@ function loadApp() {
 				if (scale==1)
 					loadSmallPage(page, pageElement);
 				else
-					loadLargePage(page, pageElement);
+					loadSmallPage(page, pageElement);
 
 			},
 
@@ -345,6 +429,7 @@ function loadApp() {
 			break;
 		}
 	});
+
 
 	// URIs - Format #/page/1 
 
@@ -492,6 +577,44 @@ function loadApp() {
 
 	$('.magazine').addClass('animated');
 
+
+
+	window.addEventListener('resize',function()
+{
+
+	var larg = (window.innerWidth);
+	var haut = (window.innerHeight);
+	var mag=document.getElementById('mag');
+
+
+	if ( larg>haut) 
+	{
+		dis='double';
+		hei=larg*0.8;
+		flipbook.turn('size', hei,600);
+		flipbook.turn('display', 'double');
+		mag.style.left="-370px";
+
+
+	
+	}
+	else 
+	{
+		dis='single';
+		hei=larg-100;
+		flipbook.turn('size',hei, 1200);
+		flipbook.turn('display', 'single');
+		mag.style.top="-"+haut/2.2+"px";
+//mag.style.marginTop='-200px';
+	} 
+
+var size = flipbook.turn("size");
+//alert("Width: "+size.width + ", Height:"+size.height);
+ //alert("Cette fenêtre fait " + larg + " de large et "+haut+" de haut");
+
+})
+
+
 }
 
 // Zoom icon
@@ -568,3 +691,6 @@ maida.addEventListener('click',function()
 
 
 </script>
+
+
+  </body></html>
